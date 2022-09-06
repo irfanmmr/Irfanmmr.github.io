@@ -17,16 +17,16 @@
 
     <body class="text-gray-900 font-sans relative antialiased">
         <div class="max-w-screen-2xl fixed w-full z-50 mx-auto">
-            <div class="absolute top-0 left-0 px-10 py-5 flex">
+            <div class="absolute top-0 left-0 px-5 lg:px-10 py-5 flex">
                 <img class="w-16" src="assets/logo.svg">
             </div>
-            <div class="px-10 py-5 w-full justify-end flex flex-col lg:flex-row">
-                <div class="flex flex-row space-x-10">
-                    <p class="text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">Design</p>
-                    <p class="text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">About</p>
+            <div class="px-5 lg:px-10 py-5 w-full justify-end flex flex-row">
+                <div class="flex flex-row space-x-5 lg:space-x-10">
+                    <p class="text-sm lg:text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">Design</p>
+                    <p class="text-sm lg:text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">About</p>
                     <a href="mailto: Irfanmaulanamr@gmail.com?subject=Willing to work together">
                         <div class="transform duration-300 ease-in-out hover:scale-105 cursor-pointer bg-black text-white text-center px-4 py-1 rounded-sm">
-                            <p class="font-semibold underline">Hello Irfan</p>
+                            <p class="text-sm lg:text-md font-semibold underline">Hello Irfan</p>
                         </div>
                     </a>
                 </div>
