@@ -18,7 +18,7 @@
     <body class="text-gray-900 font-sans relative antialiased">
         <div class="max-w-screen-2xl fixed w-full z-50 mx-auto">
             <div class="absolute top-0 left-0 px-5 lg:px-10 py-5 flex">
-                <img class="w-16" src="assets/logo.svg">
+                <img class="w-16" src="../assets/logo.svg">
             </div>
             <div class="px-5 lg:px-10 py-5 w-full justify-end flex flex-row">
                 <div class="flex flex-row space-x-5 lg:space-x-10">
