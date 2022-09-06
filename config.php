@@ -3,7 +3,7 @@
 return [
     'production' => false,
     'baseUrl' => '',
-    'title' => 'STIFIN',
+    'title' => 'IMMR',
     'description' => 'Website description.',
     'collections' => [],
 ];
