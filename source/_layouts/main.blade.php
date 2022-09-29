@@ -6,23 +6,37 @@
         <link rel="canonical" href="{{ $page->getUrl() }}">
         <meta name="description" content="{{ $page->description }}">
         <title>{{ $page->title }}</title>
-        <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
-        <!-- Add the slick-theme.css if you want default styling -->
-        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <!-- Add the slick-theme.css if you want default styling -->
-        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+        <link rel="manifest" href="../assets/favicon/site.webmanifest">
+
+        <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
         <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
     </head>
 
     <body class="text-gray-900 font-sans relative antialiased">
+
+    <!-- animation -->
+    <div class="animation">
+        <h1 class="animate">
+            <img class="w-16" src="../assets/logo.svg">
+        </h1>
+    </div>
+
+
         <div class="max-w-screen-2xl fixed w-full z-50 mx-auto">
-            <div class="absolute top-0 left-0 px-5 lg:px-10 py-5 flex">
-                <img class="w-16" src="../assets/logo.svg">
-            </div>
+            <a href="../">
+                <div class="absolute top-0 left-0 px-5 lg:px-10 py-5 flex">
+                    <img class="w-16" src="../assets/logo.svg">
+                </div>
+            </a>
             <div class="px-5 lg:px-10 py-5 w-full justify-end flex flex-row">
                 <div class="flex flex-row space-x-5 lg:space-x-10">
-                    <p class="text-sm lg:text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">Design</p>
+                    <a href="/design">
+                        <p class="text-sm lg:text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">Design</p>
+                    </a>
                     <p class="text-sm lg:text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">About</p>
                     <a href="mailto: Irfanmaulanamr@gmail.com?subject=Willing to work together">
                         <div class="transform duration-300 ease-in-out hover:scale-105 cursor-pointer bg-black text-white text-center px-4 py-1 rounded-sm">
@@ -37,38 +51,61 @@
         </div>
     </body>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/gsap.min.js"></script>
+
 
     <script>
-        $('.center').slick({
-            slidesToShow: 3,
-            arrows: false,
-            dots:false,
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        arrows: false,
-                        slidesToShow: 1
-                    }
-                }
-            ]
+        const timeline = gsap.timeline();
+        timeline.to(".animate", {
+            delay: 0.5,
+            duration: 0.5,
+            opacity: 0
+        });
+        timeline.to(".animation", {
+            delay: 0.5,
+            duration: 1,
+            y: "100%",
+            ease: "power4.out"
         });
 
-        $('.left').click(function(){
-            $('.center').slick('slickPrev');
+        timeline.to(".animation", {
+            zIndex: -1
+        });
+
+        timeline.from(".container h1", {
+            delay: 0.5,
+            duration: 0.8,
+            skewY: 10,
+            y: 100,
+            x: -300,
+            opacity: 0
+        });
+
+    </script>
+
+    <script>
+        const items = document.querySelectorAll('.container')
+
+        items.forEach((el) => {
+            const image = el.querySelector('img')
+
+            el.addEventListener('mouseenter', (e) => {
+                gsap.to(image, { y: -200, duration:5})
+            })
+
+            el.addEventListener('mouseleave', (e) => {
+                gsap.to(image, { y: 0, duration:5})
+            })
+            //
+            // el.addEventListener('mousemove', (e) => {
+            //     gsap.set(image, {
+            //         force3D:true,
+            //         x: e.offsetX - 100, y: e.offsetY - 100 })
+            // })
         })
 
-        $('.right').click(function(){
-            $('.center').slick('slickNext');
-        })
+
     </script>
 </html>
