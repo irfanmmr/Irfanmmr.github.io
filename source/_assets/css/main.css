@@ -8,6 +8,10 @@
     font-family: 'Work Sans', sans-serif;
 }
 
+body {
+    overflow: hidden;
+}
+
 .text-beatrice {
     font-family: "Beatrice Display" , sans-serif;
     src: url('/Beatrice Display.ttf');

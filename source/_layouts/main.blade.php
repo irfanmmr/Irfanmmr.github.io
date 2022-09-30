@@ -19,7 +19,7 @@
     <body class="text-gray-900 font-sans relative antialiased">
 
     <!-- animation -->
-    <div class="animation">
+    <div class="animation hidden">
         <h1 class="animate">
             <img class="w-16" src="../assets/logo.svg">
         </h1>
