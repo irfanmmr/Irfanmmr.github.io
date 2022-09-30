@@ -12,7 +12,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
         <link rel="manifest" href="../assets/favicon/site.webmanifest">
 
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a876a264a087a3c907d4e4414a566879">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=0d4e8057a67d6fafc07b1517484a2cc4">
         <script defer src="/assets/build/js/main.js?id=9a3976b92064a906dd1560b2bb4e8ca2"></script>
     </head>
 
@@ -34,7 +34,7 @@
             </a>
             <div class="px-5 lg:px-10 py-5 w-full justify-end flex flex-row">
                 <div class="flex flex-row space-x-5 lg:space-x-10">
-                    <a href="/design">
+                    <a class="flex" href="/design">
                         <p class="text-sm lg:text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">Design</p>
                     </a>
                     <p class="text-sm lg:text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">About</p>
@@ -50,33 +50,33 @@
             <div class="w-full flex flex-col">
     <div class="w-full h-screen flex flex-col">
         <div class="w-full my-auto flex-col flex items-center space-y-5">
-            <div class="flex flex-col -mt-48">
-                <p class="text-beatrice text-5xl leading-normal mx-auto w-8/12 text-center">
+            <div class="flex flex-col space-y-3 lg:space-y-0 -mt-52 lg:-mt-48">
+                <p class="text-beatrice text-2xl lg:text-5xl leading-normal mx-auto w-8/12 text-center">
                     Impactful branding and high-end Webflow websites for creatives.
                 </p>
-                <p class="text-center mx-auto text-xl">
+                <p class="text-center mx-auto text-lg lg:text-xl">
                     WEBSITE DESIGNER, FRONT-END DEVELOPER & WEBFLOW EXPERT
                 </p>
             </div>
 
-            <div class="flex flex-row px-12 bottom-6 absolute w-full justify-between">
-                <div class="imagescontainer w-52 h-64  bg-white hover:scale-110 duration-300 transform shadow-lg container">
+            <div class="flex lg:flex-row px-5 lg:px-12 bottom-48 lg:bottom-6 absolute w-full justify-between">
+                <div class="imagescontainer w-16 h-40 lg:w-52 lg:h-64  bg-white hover:scale-110 duration-300 transform shadow-lg container">
                     <img class="" src="../assets/1.png">
                 </div>
 
-                <div class="imagescontainer w-52 h-64  mt-5 bg-white hover:scale-110 duration-300 transform shadow-lg container">
+                <div class="imagescontainer w-16 h-40 lg:w-52 lg:h-64  mt-5 bg-white hover:scale-110 duration-300 transform shadow-lg container">
                     <img class="" src="../assets/2.png">
                 </div>
 
-                <div class="imagescontainer w-52 h-64  mt-10 bg-white hover:scale-110 duration-300 transform shadow-lg container">
+                <div class="imagescontainer w-16 h-40 lg:w-52 lg:h-64  mt-10 bg-white hover:scale-110 duration-300 transform shadow-lg container">
                     <img class="" src="../assets/3.png">
                 </div>
 
-                <div class="imagescontainer w-52 h-64  mt-5 bg-white hover:scale-110 duration-300 transform shadow-lg container">
+                <div class="imagescontainer w-16 h-40 lg:w-52 lg:h-64  mt-5 bg-white hover:scale-110 duration-300 transform shadow-lg container">
                     <img class="" src="../assets/4.png">
                 </div>
 
-                <div class="imagescontainer w-52 h-64  bg-white hover:scale-110 duration-300 transform shadow-lg container">
+                <div class="imagescontainer w-16 h-40 lg:w-52 lg:h-64  bg-white hover:scale-110 duration-300 transform shadow-lg container">
                     <img class="" src="../assets/5.png">
                 </div>
 
@@ -94,20 +94,22 @@
 
     <script>
         const timeline = gsap.timeline();
+
         timeline.to(".animate", {
             delay: 0.5,
             duration: 0.5,
             opacity: 0
         });
         timeline.to(".animation", {
-            delay: 0.5,
+            display:"flex",
             duration: 1,
-            y: "100%",
-            ease: "power4.out"
+            y: "-100%",
+            ease: "power4.out",
+            height:0
         });
 
         timeline.to(".animation", {
-            zIndex: -1
+            zIndex: -1,
         });
 
         timeline.from(".container h1", {
@@ -119,29 +121,62 @@
             opacity: 0
         });
 
+        timeline.set("body", {
+            overflow:"flex"
+        });
+
     </script>
 
     <script>
         const items = document.querySelectorAll('.container')
+        const mediaQuery = window.matchMedia("(min-width: 1280px)");
+        console.log('query', mediaQuery)
+        function buildConditionalTween(mediaQuery) {
 
-        items.forEach((el) => {
-            const image = el.querySelector('img')
+            if(mediaQuery.matches) {
+                items.forEach((el) => {
+                    const image = el.querySelector('img')
 
-            el.addEventListener('mouseenter', (e) => {
-                gsap.to(image, { y: -200, duration:5})
-            })
+                    el.addEventListener('mouseenter', (e) => {
+                        gsap.to(image, { y: -200, duration:5})
+                    })
 
-            el.addEventListener('mouseleave', (e) => {
-                gsap.to(image, { y: 0, duration:5})
-            })
-            //
-            // el.addEventListener('mousemove', (e) => {
-            //     gsap.set(image, {
-            //         force3D:true,
-            //         x: e.offsetX - 100, y: e.offsetY - 100 })
-            // })
-        })
+                    el.addEventListener('mouseleave', (e) => {
+                        gsap.to(image, { y: 0, duration:5})
+                    })
+                    //
+                    // el.addEventListener('mousemove', (e) => {
+                    //     gsap.set(image, {
+                    //         force3D:true,
+                    //         x: e.offsetX - 100, y: e.offsetY - 100 })
+                    // })
+                })
+            } else {
+                items.forEach((el) => {
+                    const image = el.querySelector('img')
 
+                    el.addEventListener('mouseenter', (e) => {
+                        gsap.to(image, { y: -10, duration:1})
+                    })
+
+                    el.addEventListener('mouseleave', (e) => {
+                        gsap.to(image, { y: 0, duration:1})
+                    })
+                    //
+                    // el.addEventListener('mousemove', (e) => {
+                    //     gsap.set(image, {
+                    //         force3D:true,
+                    //         x: e.offsetX - 100, y: e.offsetY - 100 })
+                    // })
+                })
+            }
+
+        }
+        // Initialise
+        buildConditionalTween(mediaQuery);
+
+        // Listen to changes
+        mediaQuery.addListener(buildConditionalTween);
 
     </script>
 </html>
