@@ -16,8 +16,8 @@
                         <img class="transform duration-300 ease-in-out hover:scale-105 hover:opacity-100 opacity-75 cursor-pointer -mt-5" width="300" src="assets/fe.svg">
                 </div>
 
-                <div class="flex w-full absolute bottom-5 lg:bottom-24 px-5 lg:px-0">
-                        <div class="ml-auto mx-auto lg:mr-0 pr-0 lg:pr-56 flex flex-row space-x-10">
+                <div class="flex absolute bottom-5 lg:relative w-full px-5 lg:px-0">
+                        <div class="ml-auto mx-auto lg:-mt-48 lg:mr-0 pr-0 lg:pr-56 flex flex-row space-x-10">
                                 <a href="mailto: Irfanmaulanamr@gmail.com?subject=Hai Irfan, I need you to design">
                                         <div class="transform duration-300 ease-in-out hover:scale-105 cursor-pointer bg-black text-white text-center px-5 py-2.5 rounded-sm">
                                                 <p class="font-semibold">You Need Designer ?</p>

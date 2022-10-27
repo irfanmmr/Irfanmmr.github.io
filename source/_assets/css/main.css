@@ -4,64 +4,73 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    font-family: 'Work Sans', sans-serif;
-}
+@layer utilities {
+    .max-h-desktop {
+        max-height: 720px;
+    }
 
-body {
-    /*overflow: hidden;*/
-}
+    * {
+        font-family: 'Work Sans', sans-serif;
+    }
 
-.text-beatrice {
-    font-family: "Beatrice Display" , sans-serif;
-    src: url('/Beatrice Display.ttf');
-}
-.imagescontainer {
-    background-color: white;
-    overflow: hidden;
-    position: relative;
-}
+    body {
+        /*overflow: hidden;*/
+    }
 
-.animation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    background-color: #000;
-    color: #fff;
-    overflow: hidden;
-    justify-content: center;
-    z-index: 100;
-    width: 100%;
-}
-.animate {
-    font-size: 100px;
-    text-transform: uppercase;
-    color: #e0e0e0;
-    -webkit-animation: animate 10s linear infinite;
-    animation: animate 10s linear infinite;
-}
-@-webkit-keyframes animate {
-    0% {
-        transform: translateX(-100%);
+    .text-beatrice {
+        font-family: "Beatrice Display", sans-serif;
+        src: url('/Beatrice Display.ttf');
     }
-    100% {
-        transform: translateX(100%);
+
+    .imagescontainer {
+        background-color: white;
+        overflow: hidden;
+        position: relative;
     }
-}
-@keyframes animate {
-    0% {
-        transform: translateX(-100%);
+
+    .animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        background-color: #000;
+        color: #fff;
+        overflow: hidden;
+        justify-content: center;
+        z-index: 100;
+        width: 100%;
     }
-    100% {
-        transform: translateX(100%);
+
+    .animate {
+        font-size: 100px;
+        text-transform: uppercase;
+        color: #e0e0e0;
+        -webkit-animation: animate 10s linear infinite;
+        animation: animate 10s linear infinite;
     }
-}
-.animate span {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px blue;
-    margin: 0 10px;
+
+    @-webkit-keyframes animate {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+    @keyframes animate {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+    .animate span {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px blue;
+        margin: 0 10px;
+    }
 }

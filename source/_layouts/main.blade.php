@@ -16,7 +16,7 @@
         <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
     </head>
 
-    <body class="text-gray-900 font-sans relative antialiased">
+    <body class="max-w-screen-2xl mx-auto text-gray-900 font-sans relative antialiased">
 
     <!-- animation -->
     <div class="animation hidden">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-screen-2xl relative mx-auto h-screen">
+        <div class="max-w-screen-2xl relative mx-auto h-screen max-h-desktop">
             @yield('body')
         </div>
     </body>
@@ -143,4 +143,7 @@
         mediaQuery.addListener(buildConditionalTween);
 
     </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7230368529827505"
+            crossorigin="anonymous"></script>
 </html>
