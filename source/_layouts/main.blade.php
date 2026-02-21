@@ -16,17 +16,11 @@
         <script defer src="{{ mix('js/main.js', 'assets/build') }}"></script>
     </head>
 
-    <body class="max-w-screen-2xl mx-auto text-gray-900 font-sans relative antialiased">
+    <body class="h-full mx-auto flex flex-col justify-items-center text-gray-900 font-sans relative antialiased">
 
     <!-- animation -->
-    <div class="animation hidden">
-        <h1 class="animate">
-            <img class="w-16" src="../assets/logo.svg">
-        </h1>
-    </div>
 
-
-        <div class="max-w-screen-2xl fixed w-full z-50 mx-auto">
+        <div class="bg-white max-w-screen-lg lg:max-w-screen-2xl lg:self-center fixed w-full z-50 mx-auto">
             <a href="../">
                 <div class="absolute top-0 left-0 px-5 lg:px-10 py-5 flex">
                     <img class="w-16" src="../assets/logo.svg">
@@ -34,10 +28,6 @@
             </a>
             <div class="px-5 lg:px-10 py-5 w-full justify-end flex flex-row">
                 <div class="flex flex-row space-x-5 lg:space-x-10">
-                    <a class="flex" href="/design">
-                        <p class="text-sm lg:text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">Design</p>
-                    </a>
-                    <p class="text-sm lg:text-xl font-semibold my-auto transform duration-300 ease-in-out hover:scale-105 cursor-pointer">About</p>
                     <a href="mailto: Irfanmaulanamr@gmail.com?subject=Willing to work together">
                         <div class="transform duration-300 ease-in-out hover:scale-105 cursor-pointer bg-black text-white text-center px-4 py-1 rounded-sm">
                             <p class="text-sm lg:text-md font-semibold underline">Hello Irfan</p>
@@ -46,9 +36,13 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-screen-2xl relative mx-auto h-screen max-h-desktop">
+
+
+        <div class="max-w-screen-2xl relative mx-auto lg:h-screen h-auto">
             @yield('body')
         </div>
+
+
     </body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

@@ -28,6 +28,17 @@
         position: relative;
     }
 
+    .pinned-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .reveal-text {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* Or use overflow: hidden on a parent */
+        line-height: 1.2;
+    }
+
     .animation {
         position: absolute;
         top: 0;
